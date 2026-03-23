@@ -1,209 +1,242 @@
-export default function UmrahLostFamilyHelperSite() {
-  const emergencyContacts = [
-    { name: "Primary family contact", phone: "+1-206-245-3763", role: "Call or WhatsApp" },
-    { name: "Secondary contact", phone: "+1-206-393-2704", role: "Call or WhatsApp" },
-  ];
-
-  const hotels = [
-    {
-      city: "Makkah",
-      checkIn: "Sun, 3/29/26",
-      checkOut: "Sat, 4/4/26",
-      hotel: "Jabal Omar Hyatt Regency Makkah",
-      address: "Jabal Omar, Ibrahim Al Khalil Street, Mecca, Saudi Arabia, 21955",
-    },
-    {
-      city: "Medina",
-      checkIn: "Sat, 4/4/26",
-      checkOut: "Wed, 4/8/26",
-      hotel: "Peninsula Worth Hotel",
-      address: "Abdul Muhsin Ibn Abdul Aziz, Madinah, Medina, Saudi Arabia",
-    },
-  ];
-
-  const quickPhrases = [
-    {
-      english: "I am lost. Please call my family.",
-      arabic: "أنا تائه. من فضلك اتصل بعائلتي.",
-    },
-    {
-      english: "Please take me to this hotel.",
-      arabic: "من فضلك خذني إلى هذا الفندق.",
-    },
-    {
-      english: "We are staying here.",
-      arabic: "نحن نقيم هنا.",
-    },
-    {
-      english: "Please send my live location on WhatsApp.",
-      arabic: "من فضلك أرسل موقعي المباشر على واتساب.",
-    },
-  ];
-
-  const people = [
-    {
-      name: "Aiyana Muhamad",
-      photo: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=600&q=80",
-      details: ["Group: Umrah Family", "Language: English", "Use QR on badge back if separated"],
-    },
-    {
-      name: "Benji Trosney",
-      photo: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=600&q=80",
-      details: ["Group: Umrah Family", "Language: English", "Use QR on badge back if separated"],
-    },
-    {
-      name: "Nusaibah Trosney",
-      photo: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=crop&w=600&q=80",
-      details: ["Group: Umrah Family", "Language: English", "Use QR on badge back if separated"],
-    },
-    {
-      name: "Nubilah Trosney",
-      photo: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=600&q=80",
-      details: ["Group: Umrah Family", "Language: English", "Use QR on badge back if separated"],
-    },
-    {
-      name: "Malik Muhamad",
-      photo: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=600&q=80",
-      details: ["Group: Umrah Family", "Language: English", "Use QR on badge back if separated"],
-    },
-    {
-      name: "Adam Muhamad",
-      photo: "https://images.unsplash.com/photo-1504593811423-6dd665756598?auto=format&fit=crop&w=600&q=80",
-      details: ["Group: Umrah Family", "Language: English", "Use QR on badge back if separated"],
-    },
-    {
-      name: "Haminas Muhamad",
-      photo: "https://images.unsplash.com/photo-1504257432389-52343af06ae3?auto=format&fit=crop&w=600&q=80",
-      details: ["Group: Umrah Family", "Language: English", "Use QR on badge back if separated"],
-    },
-  ];
-
-  return (
-    <div className="min-h-screen bg-stone-50 text-slate-900">
-      <div className="mx-auto max-w-md px-4 py-6 sm:max-w-2xl">
-        <header className="rounded-3xl bg-emerald-700 p-6 text-white shadow-lg">
-          <div className="flex items-start justify-between gap-4">
-            <div>
-              <p className="text-sm uppercase tracking-[0.2em] text-emerald-100">Umrah family safety</p>
-              <h1 className="mt-2 text-3xl font-bold leading-tight">Help us reunite quickly if someone gets lost</h1>
-              <p className="mt-3 text-sm text-emerald-50">
-                This page is designed so a kind stranger, hotel staff member, or security officer can immediately call us and help guide our family member back.
-              </p>
-            </div>
-            <div className="rounded-2xl bg-white/15 px-3 py-2 text-right text-sm font-semibold backdrop-blur">
-              <div>Trip</div>
-              <div>Umrah 2026</div>
-            </div>
-          </div>
-
-          <div className="mt-5 grid grid-cols-1 gap-3 sm:grid-cols-2">
-            {emergencyContacts.map((contact) => (
-              <a
-                key={contact.phone}
-                href={`tel:${contact.phone.replace(/[^+\d]/g, "")}`}
-                className="rounded-2xl bg-white p-4 text-slate-900 shadow-sm transition hover:-translate-y-0.5"
-              >
-                <div className="text-xs font-semibold uppercase tracking-wide text-emerald-700">{contact.role}</div>
-                <div className="mt-1 text-lg font-bold">{contact.name}</div>
-                <div className="mt-1 text-base">{contact.phone}</div>
-              </a>
-            ))}
-          </div>
-        </header>
-
-        <section className="mt-6 rounded-3xl bg-white p-5 shadow-sm ring-1 ring-slate-200">
-          <h2 className="text-xl font-bold">If you found our family member</h2>
-          <div className="mt-4 grid gap-3">
-            {[
-              "Call the primary number above right away.",
-              "Show this page to hotel staff, security, or police if needed.",
-              "Use the hotel section below to help direct them back to us.",
-              "If possible, send a live location by WhatsApp or share the address of where they were found.",
-            ].map((item, index) => (
-              <div key={index} className="flex items-start gap-3 rounded-2xl bg-emerald-50 p-3">
-                <div className="mt-0.5 flex h-7 w-7 items-center justify-center rounded-full bg-emerald-700 text-sm font-bold text-white">
-                  {index + 1}
-                </div>
-                <p className="text-sm leading-6 text-slate-700">{item}</p>
-              </div>
-            ))}
-          </div>
-        </section>
-
-        <section className="mt-6 grid gap-4">
-          {people.map((person) => (
-            <div id={person.name.toLowerCase().replace(/\s+/g, "-")} key={person.name} className="overflow-hidden rounded-3xl bg-white shadow-sm ring-1 ring-slate-200">
-              <div className="grid gap-0 sm:grid-cols-[180px_1fr]">
-                <div className="h-64 sm:h-full">
-                  <img src={person.photo} alt={person.name} className="h-full w-full object-cover" />
-                </div>
-                <div className="p-5">
-                  <div className="text-sm font-semibold uppercase tracking-wide text-emerald-700">Person card</div>
-                  <h2 className="mt-1 text-2xl font-bold">{person.name}</h2>
-                  <div className="mt-4 space-y-2">
-                    {person.details.map((detail) => (
-                      <div key={detail} className="rounded-2xl bg-slate-50 px-3 py-2 text-sm text-slate-700">
-                        {detail}
-                      </div>
-                    ))}
-                  </div>
-                  <div className="mt-4 flex flex-wrap gap-3">
-                    <a
-                      href={`tel:${emergencyContacts[0].phone.replace(/[^+\d]/g, "")}`}
-                      className="rounded-2xl bg-emerald-700 px-4 py-3 text-sm font-semibold text-white shadow-sm"
-                    >
-                      Call family now
-                    </a>
-                    <a
-                      href={`https://wa.me/${emergencyContacts[0].phone.replace(/[^\d]/g, "")}`}
-                      className="rounded-2xl border border-slate-300 px-4 py-3 text-sm font-semibold text-slate-800"
-                    >
-                      Open WhatsApp
-                    </a>
-                  </div>
-                </div>
-              </div>
-            </div>
-          ))}
-        </section>
-
-        <section className="mt-6 rounded-3xl bg-white p-5 shadow-sm ring-1 ring-slate-200">
-          <div className="flex items-center justify-between gap-3">
-            <h2 className="text-xl font-bold">Hotel details</h2>
-            <span className="rounded-full bg-emerald-100 px-3 py-1 text-xs font-semibold uppercase tracking-wide text-emerald-800">
-              Show this to helpers
-            </span>
-          </div>
-          <div className="mt-4 space-y-4">
-            {hotels.map((hotel) => (
-              <div key={hotel.city} className="rounded-2xl border border-slate-200 p-4">
-                <div className="flex flex-wrap items-center justify-between gap-3">
-                  <h3 className="text-lg font-bold">{hotel.city}</h3>
-                  <div className="text-xs font-semibold uppercase tracking-wide text-slate-500">
-                    {hotel.checkIn} → {hotel.checkOut}
-                  </div>
-                </div>
-                <div className="mt-2 text-base font-semibold text-slate-900">{hotel.hotel}</div>
-                <div className="mt-1 text-sm leading-6 text-slate-600">{hotel.address}</div>
-              </div>
-            ))}
-          </div>
-        </section>
-
-        <section className="mt-6 rounded-3xl bg-slate-900 p-5 text-white shadow-sm">
-          <h2 className="text-xl font-bold">Helpful phrases</h2>
-          <div className="mt-4 grid gap-3">
-            {quickPhrases.map((phrase) => (
-              <div key={phrase.english} className="rounded-2xl bg-white/10 p-4">
-                <div className="text-sm text-slate-200">{phrase.english}</div>
-                <div className="mt-2 text-right text-lg font-semibold leading-8" dir="rtl">
-                  {phrase.arabic}
-                </div>
-              </div>
-            ))}
-          </div>
-        </section>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Umrah Family Safety</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="min-h-screen bg-stone-50 text-slate-900">
+  <div class="mx-auto max-w-md px-4 py-6 sm:max-w-2xl">
+    <header class="rounded-3xl bg-emerald-700 p-6 text-white shadow-lg">
+      <div class="flex items-start justify-between gap-4">
+        <div>
+          <p class="text-sm uppercase tracking-[0.2em] text-emerald-100">Umrah family safety</p>
+          <h1 class="mt-2 text-3xl font-bold leading-tight">Help us reunite quickly if someone gets lost</h1>
+          <p class="mt-3 text-sm text-emerald-50">
+            This page is designed so a kind stranger, hotel staff member, or security officer can immediately call us and help guide our family member back.
+          </p>
+        </div>
+        <div class="rounded-2xl bg-white/15 px-3 py-2 text-right text-sm font-semibold backdrop-blur">
+          <div>Trip</div>
+          <div>Umrah 2026</div>
+        </div>
       </div>
-    </div>
-  );
-}
+
+      <div class="mt-5 grid grid-cols-1 gap-3 sm:grid-cols-2">
+        <div class="rounded-2xl bg-white p-4 text-slate-900 shadow-sm">
+          <div class="text-xs font-semibold uppercase tracking-wide text-emerald-700">Call or WhatsApp</div>
+          <div class="mt-1 text-lg font-bold">Primary family contact</div>
+          <div class="mt-1 text-base">+1-206-245-3763</div>
+          <div class="mt-3 flex gap-2">
+            <a href="tel:+12062453763" class="flex-1 rounded-xl bg-emerald-700 px-3 py-2 text-center text-sm font-semibold text-white">Call</a>
+            <a href="https://wa.me/12062453763" class="flex-1 rounded-xl border border-slate-300 px-3 py-2 text-center text-sm font-semibold text-slate-800">WhatsApp</a>
+          </div>
+        </div>
+
+        <div class="rounded-2xl bg-white p-4 text-slate-900 shadow-sm">
+          <div class="text-xs font-semibold uppercase tracking-wide text-emerald-700">Call or WhatsApp</div>
+          <div class="mt-1 text-lg font-bold">Secondary contact</div>
+          <div class="mt-1 text-base">+1-206-393-2704</div>
+          <div class="mt-3 flex gap-2">
+            <a href="tel:+12063932704" class="flex-1 rounded-xl bg-emerald-700 px-3 py-2 text-center text-sm font-semibold text-white">Call</a>
+            <a href="https://wa.me/12063932704" class="flex-1 rounded-xl border border-slate-300 px-3 py-2 text-center text-sm font-semibold text-slate-800">WhatsApp</a>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <section class="mt-6 rounded-3xl bg-white p-5 shadow-sm ring-1 ring-slate-200">
+      <h2 class="text-xl font-bold">If you found our family member</h2>
+      <div class="mt-4 grid gap-3">
+        <div class="flex items-start gap-3 rounded-2xl bg-emerald-50 p-3">
+          <div class="mt-0.5 flex h-7 w-7 items-center justify-center rounded-full bg-emerald-700 text-sm font-bold text-white">1</div>
+          <p class="text-sm leading-6 text-slate-700">Call one of the family numbers above right away.</p>
+        </div>
+        <div class="flex items-start gap-3 rounded-2xl bg-emerald-50 p-3">
+          <div class="mt-0.5 flex h-7 w-7 items-center justify-center rounded-full bg-emerald-700 text-sm font-bold text-white">2</div>
+          <p class="text-sm leading-6 text-slate-700">Show this page to hotel staff, security, or police if needed.</p>
+        </div>
+        <div class="flex items-start gap-3 rounded-2xl bg-emerald-50 p-3">
+          <div class="mt-0.5 flex h-7 w-7 items-center justify-center rounded-full bg-emerald-700 text-sm font-bold text-white">3</div>
+          <p class="text-sm leading-6 text-slate-700">Use the hotel section below to help direct them back to us.</p>
+        </div>
+        <div class="flex items-start gap-3 rounded-2xl bg-emerald-50 p-3">
+          <div class="mt-0.5 flex h-7 w-7 items-center justify-center rounded-full bg-emerald-700 text-sm font-bold text-white">4</div>
+          <p class="text-sm leading-6 text-slate-700">If possible, send a live location by WhatsApp or share the address of where they were found.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="mt-6 grid gap-4">
+      <div id="aiyana-muhamad" class="overflow-hidden rounded-3xl bg-white shadow-sm ring-1 ring-slate-200">
+        <div class="grid gap-0 sm:grid-cols-[180px_1fr]">
+          <div class="h-64 sm:h-full"><img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=600&q=80" alt="Aiyana Muhamad" class="h-full w-full object-cover" /></div>
+          <div class="p-5">
+            <div class="text-sm font-semibold uppercase tracking-wide text-emerald-700">Person card</div>
+            <h2 class="mt-1 text-2xl font-bold">Aiyana Muhamad</h2>
+            <div class="mt-4 space-y-2">
+              <div class="rounded-2xl bg-slate-50 px-3 py-2 text-sm text-slate-700">Group: Umrah Family</div>
+              <div class="rounded-2xl bg-slate-50 px-3 py-2 text-sm text-slate-700">Language: English</div>
+              <div class="rounded-2xl bg-slate-50 px-3 py-2 text-sm text-slate-700">Use QR on badge back if separated</div>
+            </div>
+            <div class="mt-4 flex flex-wrap gap-3">
+              <a href="tel:+12062453763" class="rounded-2xl bg-emerald-700 px-4 py-3 text-sm font-semibold text-white shadow-sm">Call family now</a>
+              <a href="https://wa.me/12062453763" class="rounded-2xl border border-slate-300 px-4 py-3 text-sm font-semibold text-slate-800">Open WhatsApp</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="benji-trosney" class="overflow-hidden rounded-3xl bg-white shadow-sm ring-1 ring-slate-200">
+        <div class="grid gap-0 sm:grid-cols-[180px_1fr]">
+          <div class="h-64 sm:h-full"><img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=600&q=80" alt="Benji Trosney" class="h-full w-full object-cover" /></div>
+          <div class="p-5">
+            <div class="text-sm font-semibold uppercase tracking-wide text-emerald-700">Person card</div>
+            <h2 class="mt-1 text-2xl font-bold">Benji Trosney</h2>
+            <div class="mt-4 space-y-2">
+              <div class="rounded-2xl bg-slate-50 px-3 py-2 text-sm text-slate-700">Group: Umrah Family</div>
+              <div class="rounded-2xl bg-slate-50 px-3 py-2 text-sm text-slate-700">Language: English</div>
+              <div class="rounded-2xl bg-slate-50 px-3 py-2 text-sm text-slate-700">Use QR on badge back if separated</div>
+            </div>
+            <div class="mt-4 flex flex-wrap gap-3">
+              <a href="tel:+12062453763" class="rounded-2xl bg-emerald-700 px-4 py-3 text-sm font-semibold text-white shadow-sm">Call family now</a>
+              <a href="https://wa.me/12062453763" class="rounded-2xl border border-slate-300 px-4 py-3 text-sm font-semibold text-slate-800">Open WhatsApp</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="nusaibah-trosney" class="overflow-hidden rounded-3xl bg-white shadow-sm ring-1 ring-slate-200">
+        <div class="grid gap-0 sm:grid-cols-[180px_1fr]">
+          <div class="h-64 sm:h-full"><img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=crop&w=600&q=80" alt="Nusaibah Trosney" class="h-full w-full object-cover" /></div>
+          <div class="p-5">
+            <div class="text-sm font-semibold uppercase tracking-wide text-emerald-700">Person card</div>
+            <h2 class="mt-1 text-2xl font-bold">Nusaibah Trosney</h2>
+            <div class="mt-4 space-y-2">
+              <div class="rounded-2xl bg-slate-50 px-3 py-2 text-sm text-slate-700">Group: Umrah Family</div>
+              <div class="rounded-2xl bg-slate-50 px-3 py-2 text-sm text-slate-700">Language: English</div>
+              <div class="rounded-2xl bg-slate-50 px-3 py-2 text-sm text-slate-700">Use QR on badge back if separated</div>
+            </div>
+            <div class="mt-4 flex flex-wrap gap-3">
+              <a href="tel:+12062453763" class="rounded-2xl bg-emerald-700 px-4 py-3 text-sm font-semibold text-white shadow-sm">Call family now</a>
+              <a href="https://wa.me/12062453763" class="rounded-2xl border border-slate-300 px-4 py-3 text-sm font-semibold text-slate-800">Open WhatsApp</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="nubilah-trosney" class="overflow-hidden rounded-3xl bg-white shadow-sm ring-1 ring-slate-200">
+        <div class="grid gap-0 sm:grid-cols-[180px_1fr]">
+          <div class="h-64 sm:h-full"><img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=600&q=80" alt="Nubilah Trosney" class="h-full w-full object-cover" /></div>
+          <div class="p-5">
+            <div class="text-sm font-semibold uppercase tracking-wide text-emerald-700">Person card</div>
+            <h2 class="mt-1 text-2xl font-bold">Nubilah Trosney</h2>
+            <div class="mt-4 space-y-2">
+              <div class="rounded-2xl bg-slate-50 px-3 py-2 text-sm text-slate-700">Group: Umrah Family</div>
+              <div class="rounded-2xl bg-slate-50 px-3 py-2 text-sm text-slate-700">Language: English</div>
+              <div class="rounded-2xl bg-slate-50 px-3 py-2 text-sm text-slate-700">Use QR on badge back if separated</div>
+            </div>
+            <div class="mt-4 flex flex-wrap gap-3">
+              <a href="tel:+12062453763" class="rounded-2xl bg-emerald-700 px-4 py-3 text-sm font-semibold text-white shadow-sm">Call family now</a>
+              <a href="https://wa.me/12062453763" class="rounded-2xl border border-slate-300 px-4 py-3 text-sm font-semibold text-slate-800">Open WhatsApp</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="malik-muhamad" class="overflow-hidden rounded-3xl bg-white shadow-sm ring-1 ring-slate-200">
+        <div class="grid gap-0 sm:grid-cols-[180px_1fr]">
+          <div class="h-64 sm:h-full"><img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=600&q=80" alt="Malik Muhamad" class="h-full w-full object-cover" /></div>
+          <div class="p-5">
+            <div class="text-sm font-semibold uppercase tracking-wide text-emerald-700">Person card</div>
+            <h2 class="mt-1 text-2xl font-bold">Malik Muhamad</h2>
+            <div class="mt-4 space-y-2">
+              <div class="rounded-2xl bg-slate-50 px-3 py-2 text-sm text-slate-700">Group: Umrah Family</div>
+              <div class="rounded-2xl bg-slate-50 px-3 py-2 text-sm text-slate-700">Language: English</div>
+              <div class="rounded-2xl bg-slate-50 px-3 py-2 text-sm text-slate-700">Use QR on badge back if separated</div>
+            </div>
+            <div class="mt-4 flex flex-wrap gap-3">
+              <a href="tel:+12062453763" class="rounded-2xl bg-emerald-700 px-4 py-3 text-sm font-semibold text-white shadow-sm">Call family now</a>
+              <a href="https://wa.me/12062453763" class="rounded-2xl border border-slate-300 px-4 py-3 text-sm font-semibold text-slate-800">Open WhatsApp</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="adam-muhamad" class="overflow-hidden rounded-3xl bg-white shadow-sm ring-1 ring-slate-200">
+        <div class="grid gap-0 sm:grid-cols-[180px_1fr]">
+          <div class="h-64 sm:h-full"><img src="https://images.unsplash.com/photo-1504593811423-6dd665756598?auto=format&fit=crop&w=600&q=80" alt="Adam Muhamad" class="h-full w-full object-cover" /></div>
+          <div class="p-5">
+            <div class="text-sm font-semibold uppercase tracking-wide text-emerald-700">Person card</div>
+            <h2 class="mt-1 text-2xl font-bold">Adam Muhamad</h2>
+            <div class="mt-4 space-y-2">
+              <div class="rounded-2xl bg-slate-50 px-3 py-2 text-sm text-slate-700">Group: Umrah Family</div>
+              <div class="rounded-2xl bg-slate-50 px-3 py-2 text-sm text-slate-700">Language: English</div>
+              <div class="rounded-2xl bg-slate-50 px-3 py-2 text-sm text-slate-700">Use QR on badge back if separated</div>
+            </div>
+            <div class="mt-4 flex flex-wrap gap-3">
+              <a href="tel:+12062453763" class="rounded-2xl bg-emerald-700 px-4 py-3 text-sm font-semibold text-white shadow-sm">Call family now</a>
+              <a href="https://wa.me/12062453763" class="rounded-2xl border border-slate-300 px-4 py-3 text-sm font-semibold text-slate-800">Open WhatsApp</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="haminas-muhamad" class="overflow-hidden rounded-3xl bg-white shadow-sm ring-1 ring-slate-200">
+        <div class="grid gap-0 sm:grid-cols-[180px_1fr]">
+          <div class="h-64 sm:h-full"><img src="https://images.unsplash.com/photo-1504257432389-52343af06ae3?auto=format&fit=crop&w=600&q=80" alt="Haminas Muhamad" class="h-full w-full object-cover" /></div>
+          <div class="p-5">
+            <div class="text-sm font-semibold uppercase tracking-wide text-emerald-700">Person card</div>
+            <h2 class="mt-1 text-2xl font-bold">Haminas Muhamad</h2>
+            <div class="mt-4 space-y-2">
+              <div class="rounded-2xl bg-slate-50 px-3 py-2 text-sm text-slate-700">Group: Umrah Family</div>
+              <div class="rounded-2xl bg-slate-50 px-3 py-2 text-sm text-slate-700">Language: English</div>
+              <div class="rounded-2xl bg-slate-50 px-3 py-2 text-sm text-slate-700">Use QR on badge back if separated</div>
+            </div>
+            <div class="mt-4 flex flex-wrap gap-3">
+              <a href="tel:+12062453763" class="rounded-2xl bg-emerald-700 px-4 py-3 text-sm font-semibold text-white shadow-sm">Call family now</a>
+              <a href="https://wa.me/12062453763" class="rounded-2xl border border-slate-300 px-4 py-3 text-sm font-semibold text-slate-800">Open WhatsApp</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="mt-6 rounded-3xl bg-white p-5 shadow-sm ring-1 ring-slate-200">
+      <div class="flex items-center justify-between gap-3">
+        <h2 class="text-xl font-bold">Hotel details</h2>
+        <span class="rounded-full bg-emerald-100 px-3 py-1 text-xs font-semibold uppercase tracking-wide text-emerald-800">Show this to helpers</span>
+      </div>
+      <div class="mt-4 space-y-4">
+        <div class="rounded-2xl border border-slate-200 p-4">
+          <div class="flex flex-wrap items-center justify-between gap-3">
+            <h3 class="text-lg font-bold">Makkah</h3>
+            <div class="text-xs font-semibold uppercase tracking-wide text-slate-500">Sun, 3/29/26 → Sat, 4/4/26</div>
+          </div>
+          <div class="mt-2 text-base font-semibold text-slate-900">Jabal Omar Hyatt Regency Makkah</div>
+          <div class="mt-1 text-sm leading-6 text-slate-600">Jabal Omar, Ibrahim Al Khalil Street, Mecca, Saudi Arabia, 21955</div>
+        </div>
+        <div class="rounded-2xl border border-slate-200 p-4">
+          <div class="flex flex-wrap items-center justify-between gap-3">
+            <h3 class="text-lg font-bold">Medina</h3>
+            <div class="text-xs font-semibold uppercase tracking-wide text-slate-500">Sat, 4/4/26 → Wed, 4/8/26</div>
+          </div>
+          <div class="mt-2 text-base font-semibold text-slate-900">Peninsula Worth Hotel</div>
+          <div class="mt-1 text-sm leading-6 text-slate-600">Abdul Muhsin Ibn Abdul Aziz, Madinah, Medina, Saudi Arabia</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="mt-6 rounded-3xl bg-slate-900 p-5 text-white shadow-sm">
+      <h2 class="text-xl font-bold">Helpful phrases</h2>
+      <div class="mt-4 grid gap-3">
+        <div class="rounded-2xl bg-white/10 p-4"><div class="text-sm text-slate-200">I am lost. Please call my family.</div><div class="mt-2 text-right text-lg font-semibold leading-8" dir="rtl">أنا تائه. من فضلك اتصل بعائلتي.</div></div>
+        <div class="rounded-2xl bg-white/10 p-4"><div class="text-sm text-slate-200">Please take me to this hotel.</div><div class="mt-2 text-right text-lg font-semibold leading-8" dir="rtl">من فضلك خذني إلى هذا الفندق.</div></div>
+        <div class="rounded-2xl bg-white/10 p-4"><div class="text-sm text-slate-200">We are staying here.</div><div class="mt-2 text-right text-lg font-semibold leading-8" dir="rtl">نحن نقيم هنا.</div></div>
+        <div class="rounded-2xl bg-white/10 p-4"><div class="text-sm text-slate-200">Please send my live location on WhatsApp.</div><div class="mt-2 text-right text-lg font-semibold leading-8" dir="rtl">من فضلك أرسل موقعي المباشر على واتساب.</div></div>
+      </div>
+    </section>
+  </div>
+</body>
+</html>
